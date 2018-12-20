@@ -1,3 +1,4 @@
+
 class Calculate(object):
 
     @staticmethod
