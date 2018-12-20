@@ -10,7 +10,8 @@ class Game(object):
         self.current_hand = 1
 
     def __str__(self):
-        string = "Hand " + str(self.current_hand) + " of " + str(self.number_of_hands) + '\n\n'
+        # string = "Hand " + str(self.current_hand) + " of " + str(self.number_of_hands) + '\n\n'
+        string = ''
         for player in self.players:
             string += player.name + ": " + str(player.score) + '\n'
         return string
@@ -32,15 +33,15 @@ class Game(object):
         """
         Updates the players scores based on their bets and if they are correct/incorrect
         :param hands: list of hand objects
-        :param correct: list containing True if bet was correct or integer of how many bet was off by
+        :param correct: list containing how many bet was off by
         :return: None
         """
 
         for i in range(len(hands)):
-            if correct[i]:
+            if correct[i] == 0:
                 Calculate.correct(hands[i])
             else:
-                Calculate.incorrect(hands[i], correct)
+                Calculate.incorrect(hands[i], correct[i])
 
         self.current_hand += 1
 

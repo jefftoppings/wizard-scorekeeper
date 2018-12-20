@@ -27,6 +27,8 @@ if __name__ == '__main__':
     print()
     game_over = False
     while not game_over:
+        print("Hand", game.current_hand, "of", game.number_of_hands)
+        print()
         # obtain bids from everyone
         bids = []
         for player in game.players:
@@ -39,20 +41,20 @@ if __name__ == '__main__':
         print("Input '0' for Correct, or the Number of Tricks Missed By")
         for player in game.players:
             c = int(input(player.name + ": "))
-            if c == 0:
-                correct.append(True)
-            else:
-                correct.append(c)
+            correct.append(c)
 
         # update scores
-        game.update_scores(bids, correct)
+        game.update_scores(bids, [int(x) for x in correct])
 
         # print summary of scores
         print()
-        print(game)
+        print("*** SCORE UPDATE ***")
+        print(game, end="")
+        print("********************")
+        print()
 
         # determine if game is over
-        if game.current_hand >= game.number_of_hands:
+        if game.current_hand > game.number_of_hands:
             print()
             winner = None
             max_score = 0
