@@ -41,3 +41,5 @@ class Game(object):
             else:
                 Calculate.incorrect(hands[i], correct)
 
+        self.current_hand += 1
+
