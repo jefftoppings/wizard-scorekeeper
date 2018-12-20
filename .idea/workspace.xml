@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcb732fc-d950-44e0-8d4e-267c228db564" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/WizardScorekeep.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WizardScorekeep.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/hand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculate.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculate.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,14 +57,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="py" value="1184" />
-          <entry key="txt" value="43" />
+          <entry key="py" value="1204" />
+          <entry key="txt" value="149" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="44" />
-          <entry key="Python" value="1184" />
+          <entry key="PLAIN_TEXT" value="150" />
+          <entry key="Python" value="1204" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -95,8 +91,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="43">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -270,7 +266,21 @@
       <option name="project" value="LOCAL" />
       <updated>1545279255828</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="wrote methods to update scores based on bets">
+      <created>1545280198681</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1545280198681</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added line in Game.update_scores that updates the current hand">
+      <created>1545280421302</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1545280421302</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -307,7 +317,9 @@
     <MESSAGE value="created Hand class, wrote constructor for player" />
     <MESSAGE value="Added methods to all classes" />
     <MESSAGE value="Created test script, reorganized folders" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created test script, reorganized folders" />
+    <MESSAGE value="wrote methods to update scores based on bets" />
+    <MESSAGE value="added line in Game.update_scores that updates the current hand" />
+    <option name="LAST_COMMIT_MESSAGE" value="added line in Game.update_scores that updates the current hand" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/wizard-scorekeeper/README.md" />
@@ -323,9 +335,6 @@
           <second_editor />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/testing.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -351,10 +360,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/player.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="43">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

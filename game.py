@@ -1,6 +1,7 @@
 from hand import *
 from calculate import *
 
+
 class Game(object):
 
     def __init__(self, players_list):
