@@ -119,7 +119,7 @@ def get_player_names(parent, players):
     window.resizable(False, False)
 
     # display title
-    title_label = Label(window, text="Players", fg=yellow, bg=red, font=("Helvetica", 20), width=600, pady=10)
+    title_label = Label(window, text="Player Names", fg=yellow, bg=red, font=("Helvetica", 20), width=600, pady=10)
     title_label.pack()
 
     # spacer frame
@@ -148,19 +148,28 @@ def get_player_names(parent, players):
     spacer2.grid(row=num_players, columnspan=2)
 
     # create button
-    ok = Button(frame, text="Ok", width=10, command=lambda: initialize_game(window, [e.get() for e in entries], None))
+    ok = Button(frame, text="Ok", width=10, command=lambda: display_score(window, [e.get() for e in entries], None))
     ok.grid(row=num_players+2, columnspan=2)
 
     window.mainloop()
 
 
-def initialize_game(parent, names, game, game_over=False):
+def display_score(parent, names, game, game_over=False):
+    """
+    GUI that prints out the current score for all players
+    :param parent: parent GUI
+    :param names: list containing names of the players, as strings
+    :param game: Game object
+    :param game_over: boolean stating if game has reached the final hand
+    :return: None
+    """
 
     parent.destroy()
 
+    # create new GUI
     window = Tk()
     window.title("Wizard App")
-    window.geometry("800x600")
+    window.geometry("800x350")
     window['bg'] = "#275BAD"
     window.resizable(False, False)
 
@@ -217,7 +226,7 @@ def initialize_game(parent, names, game, game_over=False):
         spacer_label.pack()
     else:
         thanks = Label(bottom, text="Thanks for Playing!", font=('Helvetica', 16), bg=blue, fg='white')
-        play_again = Button(bottom, text="Ok", command=lambda: main_menu(window))
+        play_again = Button(bottom, text="Ok", command=lambda: main_menu(window), width=5)
         thanks.pack()
         play_again.pack()
         spacer_label = Label(bottom, text="", bg=blue, height=2)
@@ -227,9 +236,16 @@ def initialize_game(parent, names, game, game_over=False):
 
 
 def get_bids(parent, game):
+    """
+    GUI that asks for players bids to be entered
+    :param parent: parent GUI
+    :param game: current instance of Game Object
+    :return: None
+    """
 
     parent.destroy()
 
+    # create new GUI
     window = Tk()
     window.title("Wizard App")
     window.geometry("400x300")
@@ -251,6 +267,7 @@ def get_bids(parent, game):
     frame = Frame(window, bg=blue)
     frame.pack()
 
+    # create entry boxes for bids to be entered
     bids = []
     for i in range(len(game.players)):
         label = Label(frame, text=game.players[i].name, bg=blue, fg='white')
@@ -271,6 +288,13 @@ def get_bids(parent, game):
 
 
 def apply_bids(parent, game, bids):
+    """
+    GUI that asks user for the number of tricks that users took
+    :param parent: parent GUI
+    :param game: instance of Game object
+    :param bids: list of bids, represented as integers
+    :return: None
+    """
 
     parent.destroy()
 
@@ -316,6 +340,14 @@ def apply_bids(parent, game, bids):
 
 
 def calculate(parent, game, bids, correctness):
+    """
+    Updates the scores according to bids asked for and taken by each player
+    :param parent: parent GUI
+    :param game: instance of Game Object
+    :param bids: list of bids
+    :param correctness: list containing actual number of tricks taken
+    :return: None
+    """
 
     # convert correctness and bids
     correctness = [int(c.get()) for c in correctness]
@@ -337,7 +369,7 @@ def calculate(parent, game, bids, correctness):
     if game.current_hand > game.number_of_hands:
         game_over = True
 
-    initialize_game(parent, [x.name for x in game.players], game, game_over)
+    display_score(parent, [x.name for x in game.players], game, game_over)
 
 
 if __name__ == '__main__':
