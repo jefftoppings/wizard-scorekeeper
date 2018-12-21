@@ -88,7 +88,7 @@ def new_game(parent):
     spacer2.grid(row=1, columnspan=2)
 
     # create button
-    ok = Button(frame, text="Ok", command=lambda: get_player_names(window, combo), width=10)
+    ok = Button(frame, text="Ok", command=lambda: get_player_names(window, int(combo.get())), width=10)
     ok.grid(row=2, columnspan=2)
 
     window.mainloop()
@@ -96,7 +96,7 @@ def new_game(parent):
 
 def get_player_names(parent, players):
 
-    num_players = int(players.get())
+    num_players = players
     parent.destroy()
 
     window = Tk()
@@ -121,6 +121,8 @@ def get_player_names(parent, players):
 
     # display input boxes for players names to be entered
     entries = []
+    if isinstance(num_players, list):
+        num_players = len(num_players)
     for i in range(num_players):
         label = Label(frame, text="Player " + str(i+1), bg=blue, fg='white')
         label.grid(row=i, column=0)
@@ -133,10 +135,19 @@ def get_player_names(parent, players):
     spacer2.grid(row=num_players, columnspan=2)
 
     # create button
-    ok = Button(frame, text="Ok", width=10)
+    ok = Button(frame, text="Ok", width=10, command=lambda: is_it_working(window))
     ok.grid(row=num_players+2, columnspan=2)
 
     window.mainloop()
+
+
+def is_it_working(parent):
+    print("yes")
+    parent.destroy()
+
+def start_game(parent, names):
+    print("starting game")
+    parent.destroy()
 
 
 if __name__ == '__main__':
