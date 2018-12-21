@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import ttk
 
 # define some colours
 blue = "#275BAD"
@@ -61,12 +62,39 @@ def new_game(parent):
     window['bg'] = "#275BAD"
     window.resizable(False, False)
 
+    # display title
+    title_label = Label(window, text="New Game", fg=yellow, bg=red, font=("Helvetica", 20), width=600, pady=10)
+    title_label.pack()
 
+    # spacer frame
+    spacer_top = Frame(window)
+    spacer_top.pack()
+    spacer_label = Label(spacer_top, text="", bg=blue, height=3)
+    spacer_label.pack()
 
+    # make frame for contents
+    frame = Frame(window, bg=blue)
+    frame.pack()
 
+    # create combobox
+    combo_label = Label(frame, text="How many players?", bg=blue, fg='white')
+    combo_label.grid(row=0)
+    combo = ttk.Combobox(frame, values=["3", "4", "5", "6"], width=3)
+    combo.grid(row=0, column=1)
 
+    # create blank label to space
+    spacer2 = Label(frame, text="", bg=blue, fg=blue)
+    spacer2.grid(row=1, columnspan=2)
+
+    # create button
+    ok = Button(frame, text="Ok", command=start_game, width=10)
+    ok.grid(row=2, columnspan=2)
 
     window.mainloop()
+
+
+def start_game():
+    print("ok clicked")
 
 
 if __name__ == '__main__':
