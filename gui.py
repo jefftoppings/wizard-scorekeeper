@@ -135,18 +135,14 @@ def get_player_names(parent, players):
     spacer2.grid(row=num_players, columnspan=2)
 
     # create button
-    ok = Button(frame, text="Ok", width=10, command=lambda: is_it_working(window))
+    ok = Button(frame, text="Ok", width=10, command=lambda: get_names(window, [e.get() for e in entries]))
     ok.grid(row=num_players+2, columnspan=2)
 
     window.mainloop()
 
 
-def is_it_working(parent):
-    print("yes")
-    parent.destroy()
-
-def start_game(parent, names):
-    print("starting game")
+def get_names(parent, names):
+    print(names)
     parent.destroy()
 
 
