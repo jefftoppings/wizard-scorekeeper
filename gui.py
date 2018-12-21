@@ -80,6 +80,7 @@ def new_game(parent):
     combo_label = Label(frame, text="How many players?", bg=blue, fg='white')
     combo_label.grid(row=0)
     combo = ttk.Combobox(frame, values=["3", "4", "5", "6"], width=3)
+    combo.current(0)
     combo.grid(row=0, column=1)
 
     # create blank label to space
@@ -87,14 +88,55 @@ def new_game(parent):
     spacer2.grid(row=1, columnspan=2)
 
     # create button
-    ok = Button(frame, text="Ok", command=start_game, width=10)
+    ok = Button(frame, text="Ok", command=lambda: get_player_names(window, combo), width=10)
     ok.grid(row=2, columnspan=2)
 
     window.mainloop()
 
 
-def start_game():
-    print("ok clicked")
+def get_player_names(parent, players):
+
+    num_players = int(players.get())
+    parent.destroy()
+
+    window = Tk()
+    window.title("Wizard App")
+    window.geometry("400x300")
+    window['bg'] = "#275BAD"
+    window.resizable(False, False)
+
+    # display title
+    title_label = Label(window, text="Players", fg=yellow, bg=red, font=("Helvetica", 20), width=600, pady=10)
+    title_label.pack()
+
+    # spacer frame
+    spacer_top = Frame(window)
+    spacer_top.pack()
+    spacer_label = Label(spacer_top, text="", bg=blue, height=3)
+    spacer_label.pack()
+
+    # make frame for contents
+    frame = Frame(window, bg=blue)
+    frame.pack()
+
+    # display input boxes for players names to be entered
+    entries = []
+    for i in range(num_players):
+        label = Label(frame, text="Player " + str(i+1), bg=blue, fg='white')
+        label.grid(row=i, column=0)
+        entry = Entry(frame)
+        entry.grid(row=i, column=1)
+        entries.append(entry)
+
+    # create blank label to space
+    spacer2 = Label(frame, text="", bg=blue, fg=blue)
+    spacer2.grid(row=num_players, columnspan=2)
+
+    # create button
+    ok = Button(frame, text="Ok", width=10)
+    ok.grid(row=num_players+2, columnspan=2)
+
+    window.mainloop()
 
 
 if __name__ == '__main__':
