@@ -7,6 +7,10 @@ red = "#c92810"
 
 
 def main_menu():
+    """
+    Creates the main menu GUI
+    :return: None
+    """
     window = Tk()
     window.title("Wizard App")
     window.geometry("800x600")
@@ -32,11 +36,35 @@ def main_menu():
     title_label.pack()
 
     # put buttons at bottom
-    new_game_button = Button(contents, text="New Game", height="2", width="20")
+    new_game_button = Button(contents, text="New Game", height="2", width="20", command=lambda: new_game(window))
     exit_button = Button(contents, text="Exit", height="2", width="20", command=window.destroy)
 
     new_game_button.grid(row=0, column=0, padx=15, pady=175)
     exit_button.grid(row=0, column=1, padx=15, pady=175)
+
+    window.mainloop()
+
+
+def new_game(parent):
+    """
+    Creates a GUI for user to enter parameters for game
+    :param parent: parent GUI
+    :return: None
+    """
+
+    parent.destroy()
+
+    # create a new window
+    window = Tk()
+    window.title("Wizard App")
+    window.geometry("400x200")
+    window['bg'] = "#275BAD"
+    window.resizable(False, False)
+
+
+
+
+
 
     window.mainloop()
 
