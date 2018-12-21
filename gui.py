@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+from game import *
 
 # define some colours
 blue = "#275BAD"
@@ -95,6 +96,12 @@ def new_game(parent):
 
 
 def get_player_names(parent, players):
+    """
+    GUI that obtains the names of players
+    :param parent: parent GUI
+    :param players: number of players specified in parent GUI
+    :return: None
+    """
 
     num_players = players
     parent.destroy()
@@ -135,16 +142,55 @@ def get_player_names(parent, players):
     spacer2.grid(row=num_players, columnspan=2)
 
     # create button
-    ok = Button(frame, text="Ok", width=10, command=lambda: get_names(window, [e.get() for e in entries]))
+    ok = Button(frame, text="Ok", width=10, command=lambda: initialize_game(window, [e.get() for e in entries]))
     ok.grid(row=num_players+2, columnspan=2)
 
     window.mainloop()
 
 
-def get_names(parent, names):
-    print(names)
+def initialize_game(parent, names):
+
     parent.destroy()
 
+    window = Tk()
+    window.title("Wizard App")
+    window.geometry("800x600")
+    window['bg'] = "#275BAD"
+    window.resizable(False, False)
+
+    # spacer frame for top
+    spacer_top = Frame(window)
+    spacer_top.pack()
+    spacer_label = Label(spacer_top, text="", bg=blue, height=2)
+    spacer_label.pack()
+
+    # make a frame for the title
+    title = Frame(window)
+    title.pack()
+
+    # place the title at the top
+    title_label = Label(title, text="Scorecard", fg=yellow, bg=red, font=("Helvetica", 30), width=600, pady=30)
+    title_label.pack()
+
+    # spacer frame for middle
+    spacer_mid = Frame(window)
+    spacer_mid.pack()
+    spacer_label = Label(spacer_mid, text="", bg=blue, height=2)
+    spacer_label.pack()
+
+    # make a frame for the contents
+    contents = Frame(window, bg=blue)
+    contents.pack()
+
+    # create a table that will keep score
+    name_label = Label(contents, text="Players/Hand#", width=12, padx=3)
+    name_label.grid(row=0, column=0)
+    for i in range(len(names)):
+        label = Label(contents, text=names[i], width=12, padx=3)
+        label.grid(row=0, column=i+1)
+
+
+    window.mainloop()
 
 if __name__ == '__main__':
     main_menu()
