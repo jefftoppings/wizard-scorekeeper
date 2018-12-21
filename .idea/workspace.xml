@@ -62,14 +62,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="py" value="8863" />
-          <entry key="txt" value="589" />
+          <entry key="py" value="9512" />
+          <entry key="txt" value="640" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="590" />
-          <entry key="Python" value="8863" />
+          <entry key="PLAIN_TEXT" value="641" />
+          <entry key="Python" value="9512" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -121,8 +121,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/play_in_console.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+            <state relative-caret-position="170">
+              <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -133,11 +133,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="188" column="36" lean-forward="true" selection-start-line="188" selection-start-column="36" selection-end-line="188" selection-end-column="36" />
+            <state relative-caret-position="281">
+              <caret line="202" column="56" lean-forward="true" selection-start-line="202" selection-start-column="56" selection-end-line="202" selection-end-column="56" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <marker date="1545408362925" expanded="true" signature="5382:5384" ph="..." />
+                <marker date="1545409634917" expanded="true" signature="5881:5884" ph="..." />
               </folding>
             </state>
           </provider>
@@ -444,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1545406908219</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Player names are displayed in the scorecard">
+      <created>1545408391220</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1545408391220</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -493,7 +500,8 @@
     <MESSAGE value="created gui for entering player names" />
     <MESSAGE value="modified getting names gui to direct to command is_it_working (temporary)" />
     <MESSAGE value="get_names() works correctly now" />
-    <option name="LAST_COMMIT_MESSAGE" value="get_names() works correctly now" />
+    <MESSAGE value="Player names are displayed in the scorecard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Player names are displayed in the scorecard" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/wizard-scorekeeper/README.md" />
@@ -558,8 +566,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/play_in_console.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        <state relative-caret-position="170">
+          <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -568,11 +576,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="188" column="36" lean-forward="true" selection-start-line="188" selection-start-column="36" selection-end-line="188" selection-end-column="36" />
+        <state relative-caret-position="281">
+          <caret line="202" column="56" lean-forward="true" selection-start-line="202" selection-start-column="56" selection-end-line="202" selection-end-column="56" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-            <marker date="1545408362925" expanded="true" signature="5382:5384" ph="..." />
+            <marker date="1545409634917" expanded="true" signature="5881:5884" ph="..." />
           </folding>
         </state>
       </provider>

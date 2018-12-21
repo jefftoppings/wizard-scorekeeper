@@ -8,11 +8,15 @@ yellow = "#ffd311"
 red = "#c92810"
 
 
-def main_menu():
+def main_menu(parent=None):
     """
     Creates the main menu GUI
+    :param parent: if there is a parent GUI
     :return: None
     """
+    if parent is not None:
+        parent.destroy()
+
     window = Tk()
     window.title("Wizard App")
     window.geometry("800x600")
@@ -182,15 +186,36 @@ def initialize_game(parent, names):
     contents = Frame(window, bg=blue)
     contents.pack()
 
-    # create a table that will keep score
+    # create headings for table that will keep score
     name_label = Label(contents, text="Players/Hand#", width=12, padx=3)
     name_label.grid(row=0, column=0)
     for i in range(len(names)):
         label = Label(contents, text=names[i], width=12, padx=3)
         label.grid(row=0, column=i+1)
 
+    # # initialize game
+    # game = Game(names)
+    game_over = False
+
+    # frame for buttons at bottom
+    bottom = Frame(window, bg=blue)
+    bottom.pack(side=BOTTOM)
+
+    if not game_over:
+        bets = Button(bottom, text="Record Bets")
+        bets.pack()
+        spacer_label = Label(bottom, text="", bg=blue, height=2)
+        spacer_label.pack()
+    else:
+        thanks = Label(bottom, text="Thanks for Playing!", font=('Helvetica', 16), bg=blue, fg='white')
+        play_again = Button(bottom, text="Ok", command=lambda: main_menu(window))
+        thanks.pack()
+        play_again.pack()
+        spacer_label = Label(bottom, text="", bg=blue, height=2)
+        spacer_label.pack()
 
     window.mainloop()
+
 
 if __name__ == '__main__':
     main_menu()
