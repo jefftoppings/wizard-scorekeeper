@@ -3,11 +3,13 @@ from tkinter import ttk
 from game import *
 from player import *
 from hand import *
+import datetime
 
 # define some colours
 blue = "#275BAD"
 yellow = "#ffd311"
 red = "#c92810"
+start_date = str(datetime.datetime.now())
 
 
 def main_menu(parent=None):
@@ -200,6 +202,14 @@ def display_score(parent, names, game, game_over=False):
     # initialize game if necessary
     if game is None:
         game = Game([Player(name) for name in names])
+        # create scoresheet csv for backup
+        f = open("scoresheet.txt", "w")
+        f.write(start_date + '\n')
+        names_all = ""
+        for name in names:
+            names_all += name + ","
+        f.write(names_all[:-1] + '\n')
+        f.close()
 
     # create headings for table that will keep score
     name_label = Label(contents, text="Players:", width=12, padx=3)
@@ -363,6 +373,14 @@ def calculate(parent, game, bids, correctness):
 
     # apply to game
     game.update_scores(hands, missed_by)
+
+    # update text file
+    f = open("scoresheet.txt", "a+")
+    scores = ""
+    for player in game.players:
+        scores += str(player.score) + ","
+    f.write(scores[:-1] + '\n')
+    f.close()
 
     # determine if game is over
     game_over = False
