@@ -27,6 +27,13 @@ def main_menu(parent=None):
     window['bg'] = "#275BAD"
     window.resizable(False, False)
 
+    # center the window on the user's screen
+    w_width = 800
+    w_height = 600
+    right = int(window.winfo_screenwidth()/2 - w_width/2)
+    down = int(window.winfo_screenheight()/2 - w_height/2)
+    window.geometry("+{}+{}".format(right, down))
+
     # spacer frame for top
     spacer_top = Frame(window)
     spacer_top.pack()
@@ -70,6 +77,13 @@ def new_game(parent):
     window.geometry("400x200")
     window['bg'] = "#275BAD"
     window.resizable(False, False)
+
+    # center the window on the user's screen
+    w_width = 400
+    w_height = 200
+    right = int(window.winfo_screenwidth() / 2 - w_width / 2)
+    down = int(window.winfo_screenheight() / 2 - w_height / 2)
+    window.geometry("+{}+{}".format(right, down))
 
     # display title
     title_label = Label(window, text="New Game", fg=yellow, bg=red, font=("Helvetica", 20), width=600, pady=10)
@@ -119,6 +133,13 @@ def get_player_names(parent, players):
     window.geometry("400x300")
     window['bg'] = "#275BAD"
     window.resizable(False, False)
+
+    # center the window on the user's screen
+    w_width = 400
+    w_height = 300
+    right = int(window.winfo_screenwidth() / 2 - w_width / 2)
+    down = int(window.winfo_screenheight() / 2 - w_height / 2)
+    window.geometry("+{}+{}".format(right, down))
 
     # display title
     title_label = Label(window, text="Player Names", fg=yellow, bg=red, font=("Helvetica", 20), width=600, pady=10)
@@ -174,6 +195,13 @@ def display_score(parent, names, game, game_over=False):
     window.geometry("800x350")
     window['bg'] = "#275BAD"
     window.resizable(False, False)
+
+    # center the window on the user's screen
+    w_width = 800
+    w_height = 350
+    right = int(window.winfo_screenwidth() / 2 - w_width / 2)
+    down = int(window.winfo_screenheight() / 2 - w_height / 2)
+    window.geometry("+{}+{}".format(right, down))
 
     # spacer frame for top
     spacer_top = Frame(window)
@@ -266,6 +294,13 @@ def get_bids(parent, game):
     window['bg'] = "#275BAD"
     window.resizable(False, False)
 
+    # center the window on the user's screen
+    w_width = 400
+    w_height = 300
+    right = int(window.winfo_screenwidth() / 2 - w_width / 2)
+    down = int(window.winfo_screenheight() / 2 - w_height / 2)
+    window.geometry("+{}+{}".format(right, down))
+
     # display title
     title_label = Label(window, text="Bids for Hand #" + str(game.current_hand), fg=yellow, bg=red, font=("Helvetica", 20),
                         width=600, pady=10)
@@ -318,6 +353,13 @@ def apply_bids(parent, game, bids):
     window.geometry("400x300")
     window['bg'] = "#275BAD"
     window.resizable(False, False)
+
+    # center the window on the user's screen
+    w_width = 400
+    w_height = 300
+    right = int(window.winfo_screenwidth() / 2 - w_width / 2)
+    down = int(window.winfo_screenheight() / 2 - w_height / 2)
+    window.geometry("+{}+{}".format(right, down))
 
     # display title
     title_label = Label(window, text="Correctness of Bids", fg=yellow, bg=red, font=("Helvetica", 20),
@@ -400,6 +442,13 @@ def display_scoresheet():
     window.geometry("800x600")
     window['bg'] = "#275BAD"
     window.resizable(False, False)
+
+    # center the window on the user's screen
+    w_width = 800
+    w_height = 600
+    right = int(window.winfo_screenwidth() / 2 - w_width / 2)
+    down = int(window.winfo_screenheight() / 2 - w_height / 2)
+    window.geometry("+{}+{}".format(right, down))
 
     # make a frame for the title
     title = Frame(window)
