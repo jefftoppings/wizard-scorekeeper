@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/gui.py" line="233" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="bcb732fc-d950-44e0-8d4e-267c228db564" name="Default Changelist" comment="">
+    <list default="true" id="bcb732fc-d950-44e0-8d4e-267c228db564" name="Default Changelist" comment="GUI writes full scoresheet to a text file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
     </list>
@@ -62,14 +65,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="py" value="12782" />
-          <entry key="txt" value="760" />
+          <entry key="py" value="14038" />
+          <entry key="txt" value="899" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="761" />
-          <entry key="Python" value="12782" />
+          <entry key="PLAIN_TEXT" value="900" />
+          <entry key="Python" value="14038" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -77,13 +80,13 @@
           <entry key="csv" value="2" />
           <entry key="md" value="1" />
           <entry key="py" value="15" />
-          <entry key="txt" value="5" />
+          <entry key="txt" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="PLAIN_TEXT" value="9" />
           <entry key="Python" value="15" />
         </counts>
       </usages-collector>
@@ -145,12 +148,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="301" column="56" selection-start-line="301" selection-start-column="56" selection-end-line="301" selection-end-column="56" />
+            <state relative-caret-position="389">
+              <caret line="432" column="48" lean-forward="true" selection-start-line="432" selection-start-column="48" selection-end-line="432" selection-end-column="48" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <marker date="1545434331389" expanded="true" signature="8940:11411" ph="..." />
-                <marker date="1545434331389" expanded="true" signature="11408:11411" ph="..." />
+                <marker date="1545436929464" expanded="true" signature="11633:12711" ph="..." />
+                <marker date="1545436929464" expanded="true" signature="12708:12711" ph="..." />
               </folding>
             </state>
           </provider>
@@ -182,6 +185,7 @@
         <option value="$PROJECT_DIR$/game.py" />
         <option value="$PROJECT_DIR$/play_in_console.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/scoresheet.txt" />
         <option value="$PROJECT_DIR$/gui.py" />
       </list>
     </option>
@@ -485,19 +489,27 @@
       <option name="project" value="LOCAL" />
       <updated>1545432415424</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="GUI writes full scoresheet to a text file">
+      <created>1545434462662</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1545434462662</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.101685986" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.101685986" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28633407" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28633407" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.36442515" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -538,7 +550,8 @@
     <MESSAGE value="scorecard is built" />
     <MESSAGE value="gui appears to work as designed" />
     <MESSAGE value="Updated documentation, changed GUI size for scoresheet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated documentation, changed GUI size for scoresheet" />
+    <MESSAGE value="GUI writes full scoresheet to a text file" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI writes full scoresheet to a text file" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/wizard-scorekeeper/README.md" />
@@ -615,16 +628,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scoresheet.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="301" column="56" selection-start-line="301" selection-start-column="56" selection-end-line="301" selection-end-column="56" />
+        <state relative-caret-position="389">
+          <caret line="432" column="48" lean-forward="true" selection-start-line="432" selection-start-column="48" selection-end-line="432" selection-end-column="48" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-            <marker date="1545434331389" expanded="true" signature="8940:11411" ph="..." />
-            <marker date="1545434331389" expanded="true" signature="11408:11411" ph="..." />
+            <marker date="1545436929464" expanded="true" signature="11633:12711" ph="..." />
+            <marker date="1545436929464" expanded="true" signature="12708:12711" ph="..." />
           </folding>
         </state>
       </provider>

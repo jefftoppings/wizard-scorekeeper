@@ -9,7 +9,7 @@ import datetime
 blue = "#275BAD"
 yellow = "#ffd311"
 red = "#c92810"
-start_date = str(datetime.datetime.now())
+start_date = str(datetime.datetime.now())[:-10]
 
 
 def main_menu(parent=None):
@@ -230,6 +230,10 @@ def display_score(parent, names, game, game_over=False):
     bottom.pack(side=BOTTOM)
 
     if not game_over:
+        score = Button(bottom, text="View Full Scoresheet", command=display_scoresheet)
+        score.pack()
+        spacer4 = Label(bottom, text="", fg=blue, bg=blue)
+        spacer4.pack()
         bets = Button(bottom, text="Record Bets", command=lambda: get_bids(window, game))
         bets.pack()
         spacer_label = Label(bottom, text="", bg=blue, height=2)
@@ -388,6 +392,57 @@ def calculate(parent, game, bids, correctness):
         game_over = True
 
     display_score(parent, [x.name for x in game.players], game, game_over)
+
+
+def display_scoresheet():
+    window = Tk()
+    window.title("Official Scoresheet")
+    window.geometry("800x600")
+    window['bg'] = "#275BAD"
+    window.resizable(False, False)
+
+    # make a frame for the title
+    title = Frame(window)
+    title.pack()
+
+    # place the title at the top
+    title_label = Label(title, text=start_date, fg=yellow, bg=red, font=("Helvetica", 30), width=600, pady=30)
+    title_label.pack()
+
+    # spacer frame for middle
+    spacer_mid = Frame(window)
+    spacer_mid.pack()
+    spacer_label = Label(spacer_mid, text="", bg=blue, height=2)
+    spacer_label.pack()
+
+    with open("scoresheet.txt", 'r') as f:
+        lines = []
+        for line in f:
+            lines.append(line.rstrip().split(","))
+    lines = lines[1:]
+    f.close()
+
+    # frame for nicely formatted table
+    score_frame = Frame(window)
+    score_frame.pack()
+
+    num_players = len(lines[0])
+    for r in range(len(lines)):
+        for c in range(num_players):
+            label = Label(score_frame, text=str(lines[r][c]))
+            label.grid(row=r, column=c, padx=30)
+
+    # bottom frame for okay button
+    bottom = Frame(window, bg=blue)
+    bottom.pack(side=BOTTOM)
+
+    ok = Button(bottom, text="Ok", width=10, command=window.destroy)
+    ok.pack()
+
+    space_bot = Label(bottom, text="", bg=blue, fg=blue)
+    space_bot.pack()
+
+    window.mainloop()
 
 
 if __name__ == '__main__':
