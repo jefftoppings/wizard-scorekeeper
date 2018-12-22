@@ -273,6 +273,10 @@ def display_score(parent, names, game, game_over=False):
         play_again.pack()
         spacer_label = Label(bottom, text="", bg=blue, height=2)
         spacer_label.pack()
+        score = Button(bottom, text="View Full Scoresheet", command=display_scoresheet)
+        score.pack()
+        spacer4 = Label(bottom, text="", fg=blue, bg=blue)
+        spacer4.pack()
 
     window.mainloop()
 
